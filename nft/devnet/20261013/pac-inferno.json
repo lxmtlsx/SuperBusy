@@ -1,0 +1,30 @@
+{
+  "name": "Super Busy · Inferno",
+  "symbol": "SBTEST",
+  "description": "Demon horns, fire halo and rising embers. Cosmetic skin for Super Busy Pac-Man. DEVNET TEST NFT — no real monetary value.",
+  "image": "https://lxmtlsx.github.io/SuperBusy/nft/devnet/20261013/pac-inferno.png",
+  "external_url": "https://lxmtlsx.github.io/SuperBusy/",
+  "attributes": [
+    {
+      "trait_type": "Skin",
+      "value": "pac-inferno"
+    },
+    {
+      "trait_type": "Mode",
+      "value": "pacman"
+    },
+    {
+      "trait_type": "Network",
+      "value": "Devnet"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lxmtlsx.github.io/SuperBusy/nft/devnet/20261013/pac-inferno.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Super Busy · Aurora",
+  "symbol": "SBTEST",
+  "description": "Ice crown, aqua halo and a snowflake trail. Cosmetic skin for Super Busy Pac-Man. DEVNET TEST NFT — no real monetary value.",
+  "image": "https://lxmtlsx.github.io/SuperBusy/nft/devnet/20261013/pac-aurora.png",
+  "external_url": "https://lxmtlsx.github.io/SuperBusy/",
+  "attributes": [
+    {
+      "trait_type": "Skin",
+      "value": "pac-aurora"
+    },
+    {
+      "trait_type": "Mode",
+      "value": "pacman"
+    },
+    {
+      "trait_type": "Network",
+      "value": "Devnet"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lxmtlsx.github.io/SuperBusy/nft/devnet/20261013/pac-aurora.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image"
+  }
+}

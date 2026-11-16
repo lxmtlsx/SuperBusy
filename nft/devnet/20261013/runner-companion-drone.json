@@ -1,0 +1,34 @@
+{
+  "name": "Super Busy · Mini Drone",
+  "symbol": "SBTEST",
+  "description": "A little camera drone circling the hero. Modular cosmetic for any Super Busy Runner hero. DEVNET TEST NFT — no real monetary value.",
+  "image": "https://lxmtlsx.github.io/SuperBusy/nft/devnet/20261013/runner-companion-drone.png",
+  "external_url": "https://lxmtlsx.github.io/SuperBusy/",
+  "attributes": [
+    {
+      "trait_type": "Skin",
+      "value": "runner-companion-drone"
+    },
+    {
+      "trait_type": "Mode",
+      "value": "runner"
+    },
+    {
+      "trait_type": "Slot",
+      "value": "companion"
+    },
+    {
+      "trait_type": "Network",
+      "value": "Devnet"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lxmtlsx.github.io/SuperBusy/nft/devnet/20261013/runner-companion-drone.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image"
+  }
+}

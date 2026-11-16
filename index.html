@@ -1,133 +1,200 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Super Gioco – Sito ufficiale</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <style>
-        body { 
-            font-family: Arial, sans-serif; 
-            margin: 0;
-            padding: 40px;
-            line-height: 1.6; 
-            text-align: center;
-            background: linear-gradient(135deg, #4a00e0, #8e2de2);
-            color: white;
-        }
-
-        h1 { 
-            color: #ffffff; 
-            margin-top: 10px;
-        }
-
-        .play-button {
-            display: inline-block;
-            background-color: #00c3ff;
-            color: #000;
-            padding: 15px 30px;
-            font-size: 22px;
-            font-weight: bold;
-            border-radius: 10px;
-            text-decoration: none;
-            margin-top: 25px;
-            transition: 0.3s;
-            box-shadow: 0 0 15px rgba(0,0,0,0.3);
-        }
-        .play-button:hover {
-            background-color: #00a0d1;
-            transform: scale(1.05);
-        }
-
-        .arrow {
-            font-size: 32px;
-            color: #ffd700;
-            margin-top: 15px;
-            animation: blink 1s infinite;
-        }
-        @keyframes blink {
-            0%   { opacity: 0; transform: translateY(0); }
-            50%  { opacity: 1; transform: translateY(5px); }
-            100% { opacity: 0; transform: translateY(0); }
-        }
-
-        a { 
-            color: #ffe600; 
-            font-size: 18px; 
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-
-        h2 {
-            color: #ffeb3b;
-        }
-
-        /* 🔐 Protezione immagini */
-        .image-wrapper {
-            position: relative;
-            display: inline-block;
-        }
-
-        .image-wrapper img.protect {
-            -webkit-user-select: none;
-            user-select: none;
-            pointer-events: none;
-        }
-
-        .image-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0,0,0,0);
-            pointer-events: auto;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Super Busy — Official Site</title>
+<meta name="description" content="Super Busy: an endless neon runner. Run through ruined Rome, ride the city and fly the Bulldog UFO into orbit to take back what the Greys stole.">
+<meta property="og:title" content="Super Busy — Official Site">
+<meta property="og:description" content="Run. Ride. Fly. Take back what the Greys stole.">
+<meta property="og:image" content="https://lxmtlsx.github.io/SuperBusy/assets/img/fang-bg.webp">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#07060d">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/Oswald-Bold.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="assets/img/hero-back.webp" as="image">
+<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-    <h1>Super Gioco – Sito ufficiale</h1>
+<header class="nav" id="top">
+  <a class="brand" href="#top">SUPER <span>BUSY</span></a>
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+  <nav class="nav-links">
+    <a href="#heroes">Heroes</a>
+    <a href="#arsenal">Arsenal</a>
+    <a href="#crypto">Crypto</a>
+    <a href="#games">Games</a>
+    <a href="#comics">Comics</a>
+    <a class="btn btn-sm" href="#play">Play</a>
+  </nav>
+</header>
 
-    <a class="play-button" href="https://play.unity.com/en/games/bcc4265b-fdb4-460a-9ec5-50490b540887/webgl-builds" target="_blank">
-        🎮 Gioca Ora
-    </a>
-
-    <div class="arrow">⬇️✨⬇️</div>
-
-    <p>Avvia il gioco WebGL</p>
-
-    <!-- 🔐 Esempio: se vuoi mostrare un'immagine protetta -->
-    <!-- Sostituisci LEVEL2.png con la tua immagine -->
-    <div class="image-wrapper">
-        <img src="LEVEL2.png" class="protect">
-        <div class="image-overlay"></div>
+<section class="hero" aria-label="Super Busy">
+  <div class="layer l-back" data-depth="0.15" style="background-image:url(assets/img/hero-back.webp)"></div>
+  <div class="layer l-mid" data-depth="0.35" style="background-image:url(assets/img/hero-mid.webp)"></div>
+  <div class="hero-glow"></div>
+  <img class="layer l-fang" data-depth="0.6" src="assets/img/fang.webp" alt="Black Fang, the alien bulldog in golden armor" width="900" height="900">
+  <div class="hero-copy">
+    <p class="kicker">Endless neon runner · Android &amp; Web</p>
+    <h1>SUPER<br><span>BUSY</span></h1>
+    <p class="tagline">The Greys took his planet and his family.<br>Run. Ride. Fly. Take it all back.</p>
+    <div class="cta" id="play">
+      <a class="btn" href="https://play.unity.com/en/games/bcc4265b-fdb4-460a-9ec5-50490b540887/webgl-builds" target="_blank" rel="noopener">▶ Play in browser</a>
+      <span class="btn btn-ghost is-soon" aria-disabled="true">Google Play · Coming soon</span>
     </div>
+  </div>
+  <a class="scroll-hint" href="#story" aria-label="Scroll down">⌄</a>
+</section>
 
-    <h2>Contatti</h2>
-    <p>Email di supporto: <strong>grigioamabile@gmail.com</strong></p>
+<section class="story" id="story">
+  <div class="wrap two">
+    <div>
+      <p class="kicker">The story</p>
+      <h2>Rome is burning. <span>The sky is full of saucers.</span></h2>
+      <p>One night the Greys came down on silver beams. They took the city, they took the stars — and they took Black Fang's whole family into the mother ship. What they didn't take was the crew that refused to stay home.</p>
+      <p>Sprint through the ruins of Rome, dodge alien patrols in a neon megacity, grab every coin and orb you can, then board the Bulldog UFO and blast your way through the asteroid belt into orbit. Every run gets you a little closer.</p>
+      <ul class="facts">
+        <li><b>3</b> heroes, each with an innate power</li>
+        <li><b>City · Ruins · Orbit</b> — one endless run</li>
+        <li><b>Story mode</b> — unlock the ship part by part</li>
+      </ul>
+    </div>
+    <div class="phones">
+      <figure class="phone p1"><img src="assets/img/shot-run.webp" alt="Running through the neon city" loading="lazy" width="540" height="960"></figure>
+      <figure class="phone p2"><img src="assets/img/shot-lobby.webp" alt="Main menu with Black Fang" loading="lazy" width="540" height="1200"></figure>
+    </div>
+  </div>
+</section>
 
-    <h2>Documenti</h2>
-    <p><a href="privacy.html">Informativa sulla Privacy</a></p>
-    <p><a href="terms.html">Termini e Condizioni</a></p>
+<section class="heroes" id="heroes">
+  <div class="wrap">
+    <p class="kicker center">Choose your runner</p>
+    <h2 class="center">The <span>Heroes</span></h2>
 
-    <p>© 2026 Super Gioco</p>
+    <article class="card hero-card">
+      <div class="art" data-tilt>
+        <div class="art-bg" style="background-image:url(assets/img/boy-sky.webp)"></div>
+        <div class="art-bg mid" style="background-image:url(assets/img/boy-ruins.webp)"></div>
+        <img src="assets/img/boy.webp" alt="Boy, the metal-punk runner" loading="lazy" width="900" height="900">
+      </div>
+      <div class="info">
+        <p class="kicker">Human · Coolness 4/5</p>
+        <h3>BOY</h3>
+        <p>A metal-punk kid from the back streets of Rome who never once walked anywhere. When the saucers lit up the Colosseum he was already running — red sneakers, studded cuffs and a T-shirt louder than the alarms. He knows every alley, every rooftop and every shortcut the Greys haven't found yet.</p>
+        <dl class="stats"><dt>Ability</dt><dd>Turbo Dash — 3 s of ×1.3 speed, phasing through every hazard</dd><dt>Signature weapon</dt><dd>Busy Blaster</dd></dl>
+      </div>
+    </article>
 
-    <!-- 🔐 Blocco tasto destro, drag, selezione -->
-    <script>
-        document.addEventListener('contextmenu', event => event.preventDefault());
-        document.addEventListener('dragstart', event => event.preventDefault());
-        document.addEventListener('selectstart', event => event.preventDefault());
-    </script>
+    <article class="card hero-card flip">
+      <div class="art" data-tilt>
+        <div class="art-bg city" style="background-image:url(assets/img/shot-run.webp)"></div>
+        <img src="assets/img/lucky.webp" alt="Lucky, the puppy on a red mini-bike" loading="lazy" width="900" height="900">
+      </div>
+      <div class="info">
+        <p class="kicker">Puppy · Bulldog crew</p>
+        <h3>LUCKY</h3>
+        <p>Black Fang's little nephew — the only one of the family the Greys missed, because he was out joyriding on his red mini-bike. Hoodie up, tongue out, zero fear. Lucky has a nose for anything shiny, and coins seem to fly into his paws on their own. He's on a <i>Crazy Journey</i> to bring everybody home.</p>
+        <dl class="stats"><dt>Ability</dt><dd>Coin Pull — 6 s magnet for coins and orbs</dd><dt>Signature weapon</dt><dd>Fleeting Light</dd></dl>
+      </div>
+    </article>
 
+    <article class="card hero-card">
+      <div class="art" data-tilt>
+        <div class="art-bg" style="background-image:url(assets/img/fang-bg.webp)"></div>
+        <img src="assets/img/fang.webp" alt="Black Fang in golden armor" loading="lazy" width="900" height="900">
+      </div>
+      <div class="info">
+        <p class="kicker">Alien bulldog · Coolness 5/5</p>
+        <h3>BLACK FANG <small>a.k.a. Big Dog</small></h3>
+        <p>Once the guardian of a peaceful bulldog planet, now its last soldier. The Greys took his world and his family, so he forged a suit of golden armor out of a crashed saucer and swore he'd never stop running. Heavy, loud and impossible to knock down — and the only pilot crazy enough to fly the Bulldog UFO.</p>
+        <dl class="stats"><dt>Ability</dt><dd>Guardian Shield — absorbs one fatal hit, in the city and in orbit</dd><dt>Signature weapon</dt><dd>Infernal Tornado</dd></dl>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="arsenal" id="arsenal">
+  <div class="wrap two">
+    <div class="ufo-wrap"><img class="ufo" src="assets/img/ufo.webp" alt="The Bulldog UFO" loading="lazy" width="1000" height="563"></div>
+    <div>
+      <p class="kicker">Vehicle · Bulldog UFO</p>
+      <h2>The <span>Arsenal</span></h2>
+      <p>When the street ends, the sky begins. Collect the ship parts, board the Bulldog UFO and fight across three lanes of asteroids and Grey fighters.</p>
+      <ul class="weapons">
+        <li><b>Wings of Light</b><span>Shoulder bolts fanned across all three lanes.</span></li>
+        <li><b>Fleeting Light</b><span>A rapid stream of light darts that never stops.</span></li>
+        <li><b>Diabolical Storm</b><span>The special: the whole sky lights up and everything in front of you burns.</span></li>
+        <li><b>Infernal Tornado</b><span>A spinning firestorm that clears the lane ahead.</span></li>
+        <li><b>Busy Blaster</b><span>The crew's trusty blaster. Simple, loud, always ready.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="crypto" id="crypto">
+  <div class="wrap two">
+    <div>
+      <p class="kicker">Web3 · Solana</p>
+      <h2>Connect with <span>Phantom</span></h2>
+      <p>Super Busy runs on Solana. Sign in with your wallet — Phantom on Android through Mobile Wallet Adapter, or any Solana wallet in the browser — to unlock heroes, collect NFT skins and keep your progress tied to your wallet.</p>
+      <ol class="steps">
+        <li><b>Install Phantom</b> on your phone.</li>
+        <li><b>Connect wallet</b> on the game's start screen and sign a free login message.</li>
+        <li><b>Unlock</b> heroes and cosmetics in the Store — ownership is verified on-chain.</li>
+      </ol>
+      <p class="note">Current builds use the Solana <b>devnet</b> test network: test SOL only, no real money. No private keys ever leave your wallet.</p>
+      <div class="cta"><a class="btn" href="https://phantom.app/download" target="_blank" rel="noopener">Get Phantom</a></div>
+    </div>
+    <div class="phones single">
+      <figure class="phone p3"><img src="assets/img/shot-store.webp" alt="In-game Store with a hero to unlock" loading="lazy" width="540" height="864"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="games" id="games">
+  <div class="wrap">
+    <p class="kicker center">The Super Busy universe</p>
+    <h2 class="center">Games</h2>
+    <div class="grid">
+      <article class="card tile">
+        <img src="assets/img/shot-run.webp" alt="" loading="lazy" width="540" height="960">
+        <div><span class="tag">Available</span><h3>Super Busy — Endless Run</h3><p>City, ruins and orbit in one non-stop run. Leaderboards, story mode and wallet unlocks.</p>
+        <a class="btn btn-sm" href="https://play.unity.com/en/games/bcc4265b-fdb4-460a-9ec5-50490b540887/webgl-builds" target="_blank" rel="noopener">Play now</a></div>
+      </article>
+      <article class="card tile">
+        <img src="SuperBusyOriginal.jpg" alt="" loading="lazy" width="1024" height="1024">
+        <div><span class="tag">Classic</span><h3>Super Busy — Maze Chase</h3><p>The original arcade maze levels where it all started. Eat the dots, dodge the Greys.</p></div>
+      </article>
+      <article class="card tile soon">
+        <img src="assets/img/lucky-ride.webp" alt="" loading="lazy" width="700" height="766">
+        <div><span class="tag">Coming soon</span><h3>Lucky's Crazy Journey</h3><p>Next adventure in the works. Stay tuned.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="comics" id="comics">
+  <div class="wrap">
+    <p class="kicker center">Read the saga</p>
+    <h2 class="center"><span>Comics</span></h2>
+    <div class="comic-row">
+      <div class="comic"><img src="assets/img/boy-sky.webp" alt="" loading="lazy"><span>#1</span><b>The Night of the Saucers</b><i>Coming soon</i></div>
+      <div class="comic"><img src="assets/img/fang.webp" alt="" loading="lazy"><span>#2</span><b>Golden Armor</b><i>Coming soon</i></div>
+      <div class="comic"><img src="assets/img/ufo.webp" alt="" loading="lazy"><span>#3</span><b>Into Orbit</b><i>Coming soon</i></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap foot">
+    <div><a class="brand" href="#top">SUPER <span>BUSY</span></a><p>© 2026 Super Busy. All rights reserved.</p></div>
+    <div><h4>Contact</h4><p>Support: <a href="mailto:grigioamabile@gmail.com">grigioamabile@gmail.com</a></p></div>
+    <div><h4>Documents</h4><p><a href="privacy.html">Privacy Policy</a><br><a href="terms.html">Terms &amp; Conditions</a></p></div>
+  </div>
+</footer>
+
+<script src="assets/main.js" defer></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-

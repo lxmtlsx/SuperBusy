@@ -1,0 +1,34 @@
+{
+  "name": "Super Busy · Void Violet",
+  "symbol": "SBTEST",
+  "description": "Violet edge glow and drifting stardust. Modular cosmetic for any Super Busy Runner hero. DEVNET TEST NFT — no real monetary value.",
+  "image": "https://lxmtlsx.github.io/SuperBusy/nft/devnet/20261013/runner-glow-void.png",
+  "external_url": "https://lxmtlsx.github.io/SuperBusy/",
+  "attributes": [
+    {
+      "trait_type": "Skin",
+      "value": "runner-glow-void"
+    },
+    {
+      "trait_type": "Mode",
+      "value": "runner"
+    },
+    {
+      "trait_type": "Slot",
+      "value": "glow"
+    },
+    {
+      "trait_type": "Network",
+      "value": "Devnet"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lxmtlsx.github.io/SuperBusy/nft/devnet/20261013/runner-glow-void.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image"
+  }
+}

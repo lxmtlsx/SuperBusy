@@ -1,0 +1,34 @@
+{
+  "name": "Super Busy · Cheetah Spots",
+  "symbol": "SBTEST",
+  "description": "Golden outfit covered in dark cheetah spots. Modular cosmetic for any Super Busy Runner hero. DEVNET TEST NFT — no real monetary value.",
+  "image": "https://lxmtlsx.github.io/SuperBusy/nft/devnet/20261013/runner-pattern-cheetah.png",
+  "external_url": "https://lxmtlsx.github.io/SuperBusy/",
+  "attributes": [
+    {
+      "trait_type": "Skin",
+      "value": "runner-pattern-cheetah"
+    },
+    {
+      "trait_type": "Mode",
+      "value": "runner"
+    },
+    {
+      "trait_type": "Slot",
+      "value": "pattern"
+    },
+    {
+      "trait_type": "Network",
+      "value": "Devnet"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lxmtlsx.github.io/SuperBusy/nft/devnet/20261013/runner-pattern-cheetah.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image"
+  }
+}

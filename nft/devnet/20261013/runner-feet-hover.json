@@ -1,0 +1,34 @@
+{
+  "name": "Super Busy · Hover Boots",
+  "symbol": "SBTEST",
+  "description": "Chunky boots with neon thruster rings. Modular cosmetic for any Super Busy Runner hero. DEVNET TEST NFT — no real monetary value.",
+  "image": "https://lxmtlsx.github.io/SuperBusy/nft/devnet/20261013/runner-feet-hover.png",
+  "external_url": "https://lxmtlsx.github.io/SuperBusy/",
+  "attributes": [
+    {
+      "trait_type": "Skin",
+      "value": "runner-feet-hover"
+    },
+    {
+      "trait_type": "Mode",
+      "value": "runner"
+    },
+    {
+      "trait_type": "Slot",
+      "value": "feet"
+    },
+    {
+      "trait_type": "Network",
+      "value": "Devnet"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lxmtlsx.github.io/SuperBusy/nft/devnet/20261013/runner-feet-hover.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image"
+  }
+}

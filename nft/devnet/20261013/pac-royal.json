@@ -1,0 +1,30 @@
+{
+  "name": "Super Busy · Royal",
+  "symbol": "SBTEST",
+  "description": "Gold crown, red cape and an orbiting coin. Cosmetic skin for Super Busy Pac-Man. DEVNET TEST NFT — no real monetary value.",
+  "image": "https://lxmtlsx.github.io/SuperBusy/nft/devnet/20261013/pac-royal.png",
+  "external_url": "https://lxmtlsx.github.io/SuperBusy/",
+  "attributes": [
+    {
+      "trait_type": "Skin",
+      "value": "pac-royal"
+    },
+    {
+      "trait_type": "Mode",
+      "value": "pacman"
+    },
+    {
+      "trait_type": "Network",
+      "value": "Devnet"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lxmtlsx.github.io/SuperBusy/nft/devnet/20261013/pac-royal.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image"
+  }
+}

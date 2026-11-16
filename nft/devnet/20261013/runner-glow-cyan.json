@@ -1,0 +1,34 @@
+{
+  "name": "Super Busy · Cyan Pulse",
+  "symbol": "SBTEST",
+  "description": "Cyan edge glow and floating sparks. Modular cosmetic for any Super Busy Runner hero. DEVNET TEST NFT — no real monetary value.",
+  "image": "https://lxmtlsx.github.io/SuperBusy/nft/devnet/20261013/runner-glow-cyan.png",
+  "external_url": "https://lxmtlsx.github.io/SuperBusy/",
+  "attributes": [
+    {
+      "trait_type": "Skin",
+      "value": "runner-glow-cyan"
+    },
+    {
+      "trait_type": "Mode",
+      "value": "runner"
+    },
+    {
+      "trait_type": "Slot",
+      "value": "glow"
+    },
+    {
+      "trait_type": "Network",
+      "value": "Devnet"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://lxmtlsx.github.io/SuperBusy/nft/devnet/20261013/runner-glow-cyan.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image"
+  }
+}
