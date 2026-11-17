@@ -83,7 +83,7 @@ section{padding:110px 0;position:relative}
 .arsenal{background:radial-gradient(ellipse at 25% 50%,rgba(56,232,255,.13),transparent 55%),var(--bg)}
 .ufo-wrap{position:relative}
 .ufo-wrap::before{content:"";position:absolute;left:10%;right:10%;top:35%;height:40%;background:radial-gradient(ellipse,rgba(56,232,255,.35),transparent 70%);filter:blur(20px)}
-.ufo{position:relative;animation:hover 4s ease-in-out infinite}
+.ufo{width:100%;height:auto;position:relative;animation:hover 4s ease-in-out infinite}
 @keyframes hover{50%{transform:translateY(-14px) rotate(-1deg)}}
 .weapons{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:10px}
 .weapons li{display:grid;grid-template-columns:190px 1fr;gap:14px;align-items:baseline;padding:12px 16px;background:var(--panel);border:1px solid rgba(56,232,255,.18)}
