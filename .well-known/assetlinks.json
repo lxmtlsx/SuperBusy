@@ -1,0 +1,18 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.DefaultCompany.SuperBusy.web3",
+      "sha256_cert_fingerprints": ["94:07:BE:AC:6A:92:12:1D:BA:2B:EE:4C:76:1E:79:78:3D:11:40:A0:DB:7C:63:98:A6:53:17:D5:A5:ED:68:5F"]
+    }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.DefaultCompany.SuperBusy",
+      "sha256_cert_fingerprints": ["94:07:BE:AC:6A:92:12:1D:BA:2B:EE:4C:76:1E:79:78:3D:11:40:A0:DB:7C:63:98:A6:53:17:D5:A5:ED:68:5F"]
+    }
+  }
+]
