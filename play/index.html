@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Super Busy — Play (devnet test)</title>
+<link rel="icon" href="favicon.ico">
+<meta name="robots" content="noindex">
+<style>
+html,body{margin:0;height:100%;background:#07070d;color:#e8f6ff;font:15px/1.4 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;overflow:hidden}
+#game{position:fixed;inset:0;width:100vw;height:100vh;height:100dvh;display:block;background:#000;outline:none}
+#loading{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:radial-gradient(circle at 50% 40%,#15233a,#07070d 70%)}
+#loading h1{margin:0;font:800 34px/1 system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#82dceb;text-shadow:0 0 18px #2bb8d0}
+#bar{width:min(320px,70vw);height:8px;border-radius:4px;background:#1c2a3c;overflow:hidden}#fill{height:100%;width:0;background:linear-gradient(90deg,#2bb8d0,#b46cff)}
+#pct{opacity:.8;font-size:13px}#err{display:none;max-width:min(520px,86vw);text-align:center;color:#ffb3b3}
+#hint{position:fixed;left:50%;bottom:max(10px,env(safe-area-inset-bottom));transform:translateX(-50%);max-width:92vw;padding:8px 12px;border-radius:10px;background:rgba(10,14,24,.88);border:1px solid #2b3d55;font-size:13px;text-align:center;display:none;z-index:5}
+#hint a{color:#82dceb;font-weight:600}#hint button{margin-left:8px;background:none;border:0;color:#8aa;font-size:16px;cursor:pointer}
+.tag{position:fixed;bottom:max(4px,env(safe-area-inset-bottom));left:8px;font-size:11px;opacity:.55;z-index:5;pointer-events:none}
+</style>
+<script>window.SuperBusyWalletConfig = { serverBaseUrl: "https://aoixrcrwclzyvwagbazq.supabase.co/functions/v1/superbusy-api", channel: "webgl" };</script>
+</head>
+<body>
+<canvas id="game" tabindex="-1"></canvas>
+<div id="loading"><h1>Super Busy</h1><div id="bar"><div id="fill"></div></div><div id="pct">Loading…</div><div id="err"></div></div>
+<div id="hint"></div>
+<div class="tag">devnet test · 0.46w</div>
+<script>
+(function(){
+  // Reassemble the split data file (GitHub Pages: 100 MB per file). Unity decodes Brotli itself (decompression fallback).
+  var DATA = "Build/SuperBusy-webgl.data.unityweb", PARTS = ["SuperBusy-webgl.data.unityweb.part0","SuperBusy-webgl.data.unityweb.part1","SuperBusy-webgl.data.unityweb.part2"], SIZE = 140480988, V = "f85f1e50edf0";
+  var realFetch = window.fetch.bind(window);
+  window.fetch = function(input, init){
+    var url = typeof input === "string" ? input : (input && input.url) || "";
+    if (url.split("?")[0].slice(-DATA.length) !== DATA) return realFetch(input, init);
+    var headers = {"Content-Type": "application/octet-stream", "Content-Length": String(SIZE)};
+    if (init && init.method === "HEAD") return Promise.resolve(new Response(null, {status: 200, headers: headers}));
+    var i = 0, reader = null;
+    var stream = new ReadableStream({
+      pull: function(ctrl){
+        var next = function(){
+          if (!reader) {
+            if (i >= PARTS.length) { ctrl.close(); return; }
+            return realFetch("Build/" + PARTS[i++] + "?v=" + V).then(function(r){
+              if (!r.ok) throw new Error("Download failed (" + r.status + ")");
+              reader = r.body.getReader(); return next();
+            });
+          }
+          return reader.read().then(function(c){
+            if (c.done) { reader = null; return next(); }
+            ctrl.enqueue(c.value);
+          });
+        };
+        return next();
+      }
+    });
+    return Promise.resolve(new Response(stream, {status: 200, headers: headers}));
+  };
+
+  var canvas = document.getElementById("game"), fill = document.getElementById("fill"), pct = document.getElementById("pct");
+  var hint = document.getElementById("hint");
+  var mobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  function showHint(html){ hint.innerHTML = html + '<button aria-label="Close" onclick="this.parentNode.style.display=\'none\'">×</button>'; hint.style.display = "block"; setTimeout(function(){ hint.style.display = "none"; }, 15000); }
+  setTimeout(function(){
+    var hasWallet = (window.phantom && window.phantom.solana) || (window.solana && window.solana.isPhantom) || window.solflare || window.backpack;
+    if (hasWallet) return;
+    if (mobile) showHint('For wallet purchases open this page in Phantom: <a href="https://phantom.app/ul/browse/' + encodeURIComponent(location.href) + '?ref=' + encodeURIComponent(location.origin) + '">Open in Phantom</a>');
+    else showHint('Wallet features need the <a href="https://phantom.com/download" target="_blank" rel="noopener">Phantom extension</a> (set to Solana devnet). The game itself plays without it.');
+  }, 2500);
+
+  var config = {
+    arguments: [],
+    dataUrl: DATA,
+    frameworkUrl: "Build/SuperBusy-webgl.framework.js.unityweb?v=" + V,
+    codeUrl: "Build/SuperBusy-webgl.wasm.unityweb?v=" + V,
+    streamingAssetsUrl: "StreamingAssets",
+    companyName: "DefaultCompany", productName: "Super Busy", productVersion: "0.46w",
+    showBanner: function(msg, type){ if (type === "error") fail(msg); else console.warn(msg); }
+  };
+  if (mobile) config.devicePixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+  function fail(msg){ var e = document.getElementById("err"); e.textContent = msg; e.style.display = "block"; pct.textContent = ""; }
+  var s = document.createElement("script");
+  s.src = "Build/SuperBusy-webgl.loader.js?v=" + V;
+  s.onload = function(){
+    createUnityInstance(canvas, config, function(p){ fill.style.width = (100 * p) + "%"; pct.textContent = Math.round(100 * p) + "%"; })
+      .then(function(instance){ window.unityInstance = instance; document.getElementById("loading").style.display = "none"; canvas.focus(); })
+      .catch(function(m){ fail(String(m)); });
+  };
+  s.onerror = function(){ fail("Could not load the game. Check your connection and refresh."); };
+  document.body.appendChild(s);
+})();
+</script>
+</body>
+</html>
