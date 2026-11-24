@@ -23,11 +23,11 @@ html,body{margin:0;height:100%;background:#15181C;color:#e8f6ff;font:15px/1.4 sy
 <canvas id="game" tabindex="-1"></canvas>
 <div id="loading"><img src="icon-512.png" alt=""><h1>Super Busy</h1><div id="bar"><div id="fill"></div></div><div id="pct">Loading…</div><div id="err"></div></div>
 <div id="hint"></div>
-<div class="tag">devnet test · 0.54w</div>
+<div class="tag">devnet test · 0.57bw</div>
 <script>
 (function(){
   // Reassemble the split data file (GitHub Pages: 100 MB per file). Unity decodes Brotli itself (decompression fallback).
-  var DATA = "Build/SuperBusy-webgl.data.unityweb", PARTS = ["SuperBusy-webgl.data.unityweb.part0","SuperBusy-webgl.data.unityweb.part1","SuperBusy-webgl.data.unityweb.part2","SuperBusy-webgl.data.unityweb.part3"], SIZE = 141908754, V = "da7fddd03a1e";
+  var DATA = "Build/SuperBusy-webgl.data.unityweb", PARTS = ["SuperBusy-webgl.data.unityweb.part0","SuperBusy-webgl.data.unityweb.part1","SuperBusy-webgl.data.unityweb.part2","SuperBusy-webgl.data.unityweb.part3"], SIZE = 145435902, V = "30b723d161e7";
   var realFetch = window.fetch.bind(window);
   window.fetch = function(input, init){
     var url = typeof input === "string" ? input : (input && input.url) || "";
@@ -73,7 +73,7 @@ html,body{margin:0;height:100%;background:#15181C;color:#e8f6ff;font:15px/1.4 sy
     frameworkUrl: "Build/SuperBusy-webgl.framework.js.unityweb?v=" + V,
     codeUrl: "Build/SuperBusy-webgl.wasm.unityweb?v=" + V,
     streamingAssetsUrl: "StreamingAssets",
-    companyName: "DefaultCompany", productName: "Super Busy", productVersion: "0.54w",
+    companyName: "DefaultCompany", productName: "Super Busy", productVersion: "0.57bw",
     showBanner: function(msg, type){ if (type === "error") fail(msg); else console.warn(msg); }
   };
   if (mobile) config.devicePixelRatio = Math.min(window.devicePixelRatio || 1, 2);
